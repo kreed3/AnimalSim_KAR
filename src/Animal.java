@@ -37,7 +37,7 @@ public abstract class Animal {
 	 * Preferred constructor initializes:
 	 * full = false
 	 * rested = true
-	 * and other instance fields are initialized to their respective values using a "this." statement
+	 * and other instance fields are initialized to their respective values using the setters
 	 * 
 	 * @param simID: the ID of the animal
 	 * @param location: where the animal is

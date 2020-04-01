@@ -18,7 +18,7 @@ public class BrownBear extends Animal implements Walkable, Swimmable{
 	// allows the program to catch an invalid subSpecies
 	
 	/**
-	 * Empty-arg constructor calls the super constructor and initailizes
+	 * Empty-arg constructor calls the super constructor and initializes:
 	 * subSpecies = "Alaskan"
 	 */
 	public BrownBear() {
@@ -26,11 +26,26 @@ public class BrownBear extends Animal implements Walkable, Swimmable{
 		subSpecies = "Alaskan";
 	} // end empty-arg constructor
 	
+	/**
+	 * preferred constructor calls the super constructor and initializes
+	 * subSpecies using the setsubSpecies method
+	 * 
+	 * @param simID: the ID of the bear
+	 * @param location: where the bear is
+	 * @param subSpecies: the sub-species of the bear
+	 */
 	public BrownBear(int simID, Location location, String subSpecies) {
 		super(simID, location);
 		setSubSpecies(subSpecies);
 	} // end preferred constructor
 
+	/**
+	 * walk moves the location of the bear in any cardinal direction 3 units
+	 * north = 1
+	 * east = 2
+	 * south = 3
+	 * west = 4
+	 */
 	public void walk(int direction) {
 		System.out.println("Your starting point is: ");
 		System.out.print(Arrays.toString(location.getCoordinates()));
@@ -54,6 +69,13 @@ public class BrownBear extends Animal implements Walkable, Swimmable{
 		System.out.print(Arrays.toString(location.getCoordinates()));
 	} // end walk
 	
+	/**
+	 * swim moves the location of the bear in any cardinal direction 2 units
+	 * north = 1
+	 * east = 2
+	 * south = 3
+	 * west = 4
+	 */
 	public void swim(int direction) {
 		System.out.println("Your starting point is: ");
 		System.out.print(Arrays.toString(location.getCoordinates()));
@@ -77,20 +99,34 @@ public class BrownBear extends Animal implements Walkable, Swimmable{
 		System.out.print(Arrays.toString(location.getCoordinates()));
 	} // end swim
 	
-	
+	/**
+	 * toString creates a string to represent the BrownBear
+	 * calls the super.toString to include the attributes from the Animal class
+	 * 
+	 * @return a string to show the bears attributes
+	 */
 @ Override 
 	public String toString() {
 		return super.toString() + "\nBrownBear [subSpecies=" + subSpecies + ", simID=" + simID + ", location=" + Arrays.toString(location.getCoordinates()) 
 		+ ", full=" + full + ", rested=" + rested + "]";
-	}
-
+	} // end toString
 
 
 	//GETTERS AND SETTERS
+
+	/**
+	 * @return the current sub-species of the bear
+	 */
 	public String getSubSpecies() {
 		return subSpecies;
-	}
+	} // end getSubSpecies
 
+	/**
+	 * checks if the String input is in the array of potential subSpecies
+	 * potentially throws InvalidSubspeciesException
+	 * 
+	 * @param subSpecies: the sub-species of the bear
+	 */
 	public void setSubSpecies(String subSpecies) {
 		boolean found = false;
 
@@ -105,6 +141,6 @@ public class BrownBear extends Animal implements Walkable, Swimmable{
 		if (found == false) {
 			throw problem;
 		}
-	}
+	} // end setSubSpecies
 	
-}
+} // end BrownBear
